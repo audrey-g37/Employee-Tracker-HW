@@ -1,0 +1,5 @@
+INSERT INTO employeeDepartment(name)
+VALUES ("Audrey")
+VALUES ("Kaelyn")
+VALUES ("Kendra")
+VALUES ("Nicole")
