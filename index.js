@@ -1,19 +1,50 @@
-const express = require("express");
-const mysql = require("mysql2");
-const PORT = process.env.PORT || 3001;
-const app = express();
+const inquirer = require("inquirer");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   root: 3306,
-//   password: "password",
-//   database: "store_db",
-// });
-
-app.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
-});
+const askUser = () =>
+  inquirer
+    .prompt({
+      type: "list",
+      message: "What would you like to do?",
+      name: "toDo",
+      choices: [
+        "view all departments",
+        "view all roles",
+        "view all employees",
+        "add a department",
+        "add a role",
+        "add an employee",
+        "update an employee role",
+      ],
+    })
+    .then((choice) => {
+      switch (choice) {
+        case "view all departments":
+          viewDepartments();
+          askUser;
+          break;
+        case "view all roles":
+          viewRoles();
+          askUser;
+          break;
+        case "view all employees":
+          viewEmployees();
+          askUser;
+          break;
+        case "add a department":
+          addDepartment();
+          askUser;
+          break;
+        case "add a role":
+          addRole();
+          askUser;
+          break;
+        case "add an employee":
+          addEmployee();
+          askUser;
+          break;
+        case "update an employee role":
+          updateRole();
+          askUser;
+          break;
+      }
+    });
