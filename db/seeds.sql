@@ -1,5 +1,6 @@
-INSERT INTO employeeDepartment(name)
-VALUES ("Audrey")
-VALUES ("Kaelyn")
-VALUES ("Kendra")
-VALUES ("Nicole")
+INSERT INTO category (category_name)
+VALUES ("Admin")
+VALUES ("Licensed");
+
+INSERT INTO position(title, salary,)
+VALUES ("English Teacher", 39000 )

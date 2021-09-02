@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   user: "root",
   root: 3306,
   password: "password",
-  database: "store_db",
+  database: "DSCD_MS_db",
 });
 
 db.promise();

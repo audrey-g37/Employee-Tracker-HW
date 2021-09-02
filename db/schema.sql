@@ -1,29 +1,29 @@
-DROP DATABASE IF EXISTS store_db;
-CREATE DATABASE store_db;
-USE store_db;
+DROP DATABASE IF EXISTS DCSD_MS_db;
+CREATE DATABASE DCSD_MS_db;
+USE DCSD_MS_db;
 
-CREATE TABLE employeeDepartment (
-    id INT PRIMARY KEY AUTO_INCRAMENT NOT NULL,
-    name VARCHAR(30) AUTO_INCRAMENT NOT NULL,
+CREATE TABLE category (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    category_name VARCHAR(30) NOT NULL
 
 );
 
-CREATE TABLE employeeRole (
-    id INT PRIMARY KEY AUTO_INCRAMENT NOT NULL,
+CREATE TABLE position (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     title VARCHAR (30),
     salary DECIMAL,
-    department_id INT,
-    FOREIGN KEY (department_id)
-    REFERENCES department(id)
+    category_id INT,
+    FOREIGN KEY (category_id)
+    REFERENCES category(id)
     ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
-    id INT PRIMARY KEY AUTO_INCRAMENT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    role_id INT,
-    manager_id INT,
-    FOREIGN KEY (role_id)
-    REFERENCES employeeRole(id)
+    position_id INT,
+    evaluator_id INT,
+    FOREIGN KEY (position_id)
+    REFERENCES position(id)
 );
