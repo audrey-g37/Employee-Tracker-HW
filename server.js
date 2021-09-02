@@ -16,6 +16,8 @@ const db = mysql.createConnection({
 
 db.promise();
 
+app.post("/", (req, res) => {});
+
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });

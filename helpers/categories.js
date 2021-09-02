@@ -13,12 +13,15 @@ const addCategory = function () {
   };
   inquirer.prompt(categoryQuestions).then((categoryInput) => {
     for (i = 0; i < categories.length; i++) {
-      if (categories[i] === categoryInput.categoryName.toUpperCase()) {
+      if (
+        categories[i].categoryName.toUpperCase() ===
+        categoryInput.categoryName.toUpperCase()
+      ) {
         return console.log("This category already exists");
       }
     }
     categoryOptions = categories;
-    categoryOptions.push(categoryInput.categoryName.toUpperCase());
+    categoryOptions.push(categoryInput);
     fs.writeFile(
       "./db/dcsd_ms_categories.json",
       JSON.stringify(categoryOptions),
