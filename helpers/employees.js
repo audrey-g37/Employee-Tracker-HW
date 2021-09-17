@@ -3,6 +3,7 @@ const fs = require("fs");
 const index = require("../index");
 const positions = require("../db/dcsd_ms_positions.json");
 const employees = require("../db/dcsd_ms_employees.json");
+const { up } = require("inquirer/lib/utils/readline");
 
 let positionNames = [];
 
@@ -104,11 +105,25 @@ const updatePosition = function () {
     },
   ];
   inquirer.prompt(newQuestions).then((choice) => {
-    for (i = 0; i < employees.length; i++) {
+    let employeeNewPositionInfo = [];
+    let updateIndex;
+
+    for (i = 0; i < positions.length; i++) {
+      if (choice.employeePosition === positions[i].positionName) {
+        employeeNewPositionInfo.push(positions[i]);
+      }
       if (choice.employeeName === employeeNames[i]) {
-        employees[i].employeePosition = choice.employeePosition;
+        updateIndex = i;
       }
     }
+    console.log(employeeNewPositionInfo[0]);
+    console.log(updateIndex);
+    console.log(employees);
+    employees[updateIndex].employeePosition = choice.employeePosition;
+    employees[updateIndex].positionSalary =
+      employeeNewPositionInfo[0].positionSalary;
+    employees[updateIndex].positionCategory =
+      employeeNewPositionInfo[0].positionCategory;
 
     fs.writeFile(
       "./db/dcsd_ms_employees.json",

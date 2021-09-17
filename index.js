@@ -21,7 +21,7 @@ const userChoices = () => {
       "Add a category",
       "Add a position",
       "Add an employee",
-      "Update characteristics of an employee position",
+      "Update an employee's position",
       "Quit",
     ],
   };
@@ -47,7 +47,7 @@ const userChoices = () => {
         case "Add an employee":
           addEmployee();
           break;
-        case "Update characteristics of an employee position":
+        case "Update an employee's position":
           updatePosition();
           break;
         case "Quit":
