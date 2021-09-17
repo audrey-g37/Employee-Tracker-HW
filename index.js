@@ -7,9 +7,9 @@ const {
 } = require("./helpers/positions");
 const { addEmployee, viewEmployees } = require("./helpers/employees");
 
-// let continueOn;
+// let continueOn = true;
 
-function userChoices() {
+const userChoices = () => {
   const userMessage = {
     type: "list",
     message: "What would you like to do?",
@@ -25,40 +25,42 @@ function userChoices() {
       "Quit",
     ],
   };
-  inquirer.prompt(userMessage).then((choice) => {
-    switch (choice.toDo) {
-      case "View all categories":
-        viewCategories();
-        break;
-      case "View all positions":
-        viewPositions();
-        break;
-      case "View all employees":
-        viewEmployees();
-        break;
-      case "Add a category":
-        addCategory();
-        break;
-      case "Add a position":
-        addPosition();
-        break;
-      case "Add an employee":
-        addEmployee();
-        break;
-      case "Update characteristics of an employee position":
-        updatePosition();
-        break;
-      case "Quit":
-        console.log("Quit selected. Goodbye!");
-        break;
-    }
-  });
-}
+  inquirer
+    .prompt(userMessage)
+    .then((choice) => {
+      switch (choice.toDo) {
+        case "View all categories":
+          viewCategories();
+          break;
+        case "View all positions":
+          viewPositions();
+          break;
+        case "View all employees":
+          viewEmployees();
+          break;
+        case "Add a category":
+          addCategory();
+          break;
+        case "Add a position":
+          addPosition();
+          break;
+        case "Add an employee":
+          addEmployee();
+          break;
+        case "Update characteristics of an employee position":
+          updatePosition();
+          break;
+        case "Quit":
+          console.log("Quit selected. Goodbye!");
+          // continueOn = false;
+          break;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 userChoices();
 
-// if (continueOn === true) {
-//   userChoices();
-// }
-
-module.exports = userChoices;
+exports.userChoices = userChoices;

@@ -9,9 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  root: 3306,
   password: "password",
-  database: "DSCD_MS_db",
+  database: "DCSD_MS_db",
 });
 
 db.promise();

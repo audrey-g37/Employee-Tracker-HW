@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const userChoices = require("../index.js");
+const index = require("../index");
 const positions = require("../db/dcsd_ms_positions.json");
 const employees = require("../db/dcsd_ms_employees.json");
 
@@ -64,17 +64,15 @@ const addEmployee = function () {
       JSON.stringify(allEmployees),
       (err) => {
         if (err) throw err;
-        console.log(
-          `${employeeInput.firstName} has been added as an employee.`
-        );
       }
     );
+    index.userChoices();
   });
 };
 
 const viewEmployees = function () {
-  console.log("clicked view Employees");
   console.table(employees);
+  index.userChoices();
 };
 
 module.exports = { addEmployee, viewEmployees };

@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const userChoices = require("../index.js");
+const index = require("../index");
 const categories = require("../db/dcsd_ms_categories.json");
 
 let categoryOptions;
@@ -27,17 +27,15 @@ const addCategory = function () {
       JSON.stringify(categoryOptions),
       (err) => {
         if (err) throw err;
-        console.log(
-          `${categoryInput.categoryName} has been added to the category options.`
-        );
       }
     );
+    index.userChoices();
   });
 };
 
 const viewCategories = function () {
-  console.log("clicked view Categories");
   console.table(categories);
+  index.userChoices();
 };
 
 module.exports = { addCategory, viewCategories };

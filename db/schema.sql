@@ -25,5 +25,5 @@ CREATE TABLE employee (
     position_id INT,
     evaluator_id INT,
     FOREIGN KEY (position_id)
-    REFERENCES position(id)
+    REFERENCES position (id)
 );
