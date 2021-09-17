@@ -17,7 +17,9 @@ const addCategory = function () {
         categories[i].categoryName.toUpperCase() ===
         categoryInput.categoryName.toUpperCase()
       ) {
-        return console.log("This category already exists");
+        return console.log(
+          "This category already exists.  Please restart the program if you wish to continue."
+        );
       }
     }
     categoryOptions = categories;

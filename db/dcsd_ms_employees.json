@@ -1,1 +1,74 @@
-[{"firstName":"Audrey","lastName":"Gillies","employeePosition":"teacher","evaluator":"Ben"},{"firstName":"Jimmy","lastName":"Gillies","employeePosition":"teacher","evaluator":"Trey"}]
+[
+  {
+    "firstName": "Becca",
+    "lastName": "Jay",
+    "employeePosition": "English Teacher",
+    "evaluator": "Jon Tack",
+    "positionCategory": "licensed",
+    "positionSalary": "39000"
+  },
+  {
+    "firstName": "Lucy",
+    "lastName": "Rogers",
+    "employeePosition": "Music Teacher",
+    "evaluator": "Bruce Stone",
+    "positionCategory": "licensed",
+    "positionSalary": "39000"
+  },
+  {
+    "firstName": "Mike",
+    "lastName": "Prosk",
+    "employeePosition": "Social Studies Teacher",
+    "evaluator": "Jon Tack",
+    "positionCategory": "licensed",
+    "positionSalary": "39000"
+  },
+  {
+    "firstName": "Kendall",
+    "lastName": "Salvey",
+    "employeePosition": "Foreign Language Teacher",
+    "evaluator": "Bruce Stone",
+    "positionCategory": "licensed",
+    "positionSalary": "43000"
+  },
+  {
+    "firstName": "Judy",
+    "lastName": "Curt",
+    "employeePosition": "English Teacher",
+    "evaluator": "Jon Tack",
+    "positionCategory": "licensed",
+    "positionSalary": "39000"
+  },
+  {
+    "firstName": "Susan",
+    "lastName": "Fields",
+    "employeePosition": "Science Teacher",
+    "evaluator": "Max Prant",
+    "positionCategory": "licensed",
+    "positionSalary": "43000"
+  },
+  {
+    "firstName": "Wes",
+    "lastName": "Beck",
+    "employeePosition": "Assistant Principal",
+    "evaluator": "Mary Bridget",
+    "positionCategory": "admin",
+    "positionSalary": "66000"
+  },
+  {
+    "firstName": "Vicky",
+    "lastName": "Smith",
+    "employeePosition": "Psychologist",
+    "evaluator": "Steve Hugh",
+    "positionCategory": "admin",
+    "positionSalary": "48000"
+  },
+  {
+    "firstName": "Sam",
+    "lastName": "Frantz",
+    "employeePosition": "Dean of Students",
+    "evaluator": "Mary Bridget",
+    "positionCategory": "admin",
+    "positionSalary": "56000"
+  }
+]

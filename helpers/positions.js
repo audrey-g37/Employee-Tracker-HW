@@ -44,7 +44,9 @@ const addPosition = function () {
         positions[i].positionName.toUpperCase() ===
         positionInput.positionName.toUpperCase()
       ) {
-        return console.log("This position already exists");
+        return console.log(
+          "This position already exists.  Please restart the program if you wish to continue."
+        );
       }
     }
     positionOptions = positions;

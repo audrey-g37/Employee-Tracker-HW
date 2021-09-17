@@ -47,15 +47,26 @@ const addEmployee = function () {
     for (i = 0; i < employees.length; i++) {
       if (
         employees[i].firstName.toUpperCase() ===
-          employeeInput.firstName.toUpperCase &&
+          employeeInput.firstName.toUpperCase() &&
         employees[i].lastName.toUpperCase() ===
           employeeInput.lastName.toUpperCase()
       ) {
         return console.log(
-          "An employee with this first and last name already exists."
+          `An employee named ${employeeInput.firstName} ${employeeInput.lastName} already exists.  To update the posistion this employee holds, please restart the program and choose the option to update an employee's position.`
         );
       }
     }
+
+    let employeePositionInfo = [];
+
+    for (i = 0; i < positions.length; i++) {
+      if (employeeInput.employeePosition === positions[i].positionName) {
+        employeePositionInfo.push(positions[i]);
+      }
+    }
+
+    employeeInput.positionCategory = employeePositionInfo[0].positionCategory;
+    employeeInput.positionSalary = employeePositionInfo[0].positionSalary;
 
     allEmployees = employees;
     allEmployees.push(employeeInput);
@@ -72,10 +83,12 @@ const addEmployee = function () {
 
 const updatePosition = function () {
   let employeeNames = [];
+  if (employees.length === 0) {
+    return console.log("No employees have been added yet.");
+  }
   for (i = 0; i < employees.length; i++) {
     employeeNames.push(`${employees[i].firstName} ${employees[i].lastName}`);
   }
-  console.log(employeeNames);
   const newQuestions = [
     {
       type: "list",
@@ -91,8 +104,6 @@ const updatePosition = function () {
     },
   ];
   inquirer.prompt(newQuestions).then((choice) => {
-    console.log(choice);
-
     for (i = 0; i < employees.length; i++) {
       if (choice.employeeName === employeeNames[i]) {
         employees[i].employeePosition = choice.employeePosition;
