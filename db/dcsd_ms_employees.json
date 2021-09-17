@@ -70,5 +70,13 @@
     "evaluator": "Mary Bridget",
     "positionCategory": "admin",
     "positionSalary": "56000"
+  },
+  {
+    "firstName": "Ann",
+    "lastName": "Hanks",
+    "employeePosition": "Math Teacher",
+    "evaluator": "Max Prant",
+    "positionCategory": "licensed",
+    "positionSalary": "43000"
   }
 ]

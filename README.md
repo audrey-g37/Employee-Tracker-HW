@@ -24,7 +24,7 @@ Run npm start when you're ready to begin. Use the arrow keys to make selections.
 
 ## Assets
 
-[Demo Video]()
+[Demo Video](https://drive.google.com/file/d/1ikTNi7w4STm0b088V5Ld3QYqatrizPhM/view?usp=sharing)
 
 ## Credits
 

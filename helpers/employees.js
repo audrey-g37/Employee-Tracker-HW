@@ -116,9 +116,6 @@ const updatePosition = function () {
         updateIndex = i;
       }
     }
-    console.log(employeeNewPositionInfo[0]);
-    console.log(updateIndex);
-    console.log(employees);
     employees[updateIndex].employeePosition = choice.employeePosition;
     employees[updateIndex].positionSalary =
       employeeNewPositionInfo[0].positionSalary;
