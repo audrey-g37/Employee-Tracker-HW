@@ -1,11 +1,11 @@
 const inquirer = require("inquirer");
 const { addCategory, viewCategories } = require("./helpers/categories");
+const { addPosition, viewPositions } = require("./helpers/positions");
 const {
-  addPosition,
-  viewPositions,
+  addEmployee,
+  viewEmployees,
   updatePosition,
-} = require("./helpers/positions");
-const { addEmployee, viewEmployees } = require("./helpers/employees");
+} = require("./helpers/employees");
 
 // let continueOn = true;
 

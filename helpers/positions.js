@@ -65,10 +65,7 @@ const viewPositions = function () {
   index.userChoices();
 };
 
-const updatePosition = function () {};
-
 module.exports = {
   viewPositions,
   addPosition,
-  updatePosition,
 };

@@ -70,9 +70,49 @@ const addEmployee = function () {
   });
 };
 
+const updatePosition = function () {
+  let employeeNames = [];
+  for (i = 0; i < employees.length; i++) {
+    employeeNames.push(`${employees[i].firstName} ${employees[i].lastName}`);
+  }
+  console.log(employeeNames);
+  const newQuestions = [
+    {
+      type: "list",
+      message: "Which employee had a change of position?",
+      name: "employeeName",
+      choices: employeeNames,
+    },
+    {
+      type: "list",
+      message: "What position will this employee now hold?",
+      name: "employeePosition",
+      choices: listPositions,
+    },
+  ];
+  inquirer.prompt(newQuestions).then((choice) => {
+    console.log(choice);
+
+    for (i = 0; i < employees.length; i++) {
+      if (choice.employeeName === employeeNames[i]) {
+        employees[i].employeePosition = choice.employeePosition;
+      }
+    }
+
+    fs.writeFile(
+      "./db/dcsd_ms_employees.json",
+      JSON.stringify(employees),
+      (err) => {
+        if (err) throw err;
+      }
+    );
+    index.userChoices();
+  });
+};
+
 const viewEmployees = function () {
   console.table(employees);
   index.userChoices();
 };
 
-module.exports = { addEmployee, viewEmployees };
+module.exports = { addEmployee, viewEmployees, updatePosition };
